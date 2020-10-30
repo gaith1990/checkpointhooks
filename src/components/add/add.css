@@ -1,0 +1,5 @@
+.butto{padding: 2% !important;
+  border-radius: 26% !important;
+  background-color: aquamarine !important;}
+  .butt{display: flex;
+    justify-content: flex-end;}
