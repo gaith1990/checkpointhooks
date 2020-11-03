@@ -10,7 +10,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Rating from "@material-ui/lab/Rating";
 import Box from "@material-ui/core/Box";
 import "./Filter.css";
-
+import {Link} from "react-router-dom"
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SearchAppBar(props) {
-  const [value, setValue] = React.useState(1);
+ 
   const classes = useStyles();
 
   function handelTitle(e) {
@@ -90,7 +90,7 @@ export default function SearchAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Movies
+            <Link to="/"><button>Home</button></Link>
           </Typography>
           <div>
             <Box component="fieldset" mb={0} borderColor="transparent">

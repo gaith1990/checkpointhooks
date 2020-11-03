@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import SimpleModal from '@material-ui/core/Modal';
 import { useState } from "react";
-import { Button } from '@material-ui/core';
-import MovieData from "../../data.js";
 import "./add.css"
 function rand() {
   return Math.round(Math.random() * 20) - 10;

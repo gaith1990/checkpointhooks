@@ -1,7 +1,5 @@
 import React from "react";
 import MovieCard from "../MovieCard/MovieCard";
-
-
 function MovieList(props) {
   return (
     <div style={{ display: "flex", position: "relative", flexWrap: "wrap" }}>
@@ -17,6 +15,7 @@ function MovieList(props) {
               description={list.description}
               posteUrl={list.posteUrl}
               rate={list.rate}
+              id={list.id}
             />
           );
         })}

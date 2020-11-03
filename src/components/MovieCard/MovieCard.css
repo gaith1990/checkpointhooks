@@ -1,5 +1,5 @@
 .MuiCard-root{
-    max-width: 30% !important;
+    width: 20% !important;
     margin: 1%;
     border-radius: 15% !important;
     background-color: cornflowerblue !important;
@@ -13,3 +13,6 @@
 .MuiCardMedia-root {
     height: 285px !important;
 }
+.buttonband{padding: 2% !important;
+    border-radius: 26% !important;
+    background-color: aquamarine !important;}

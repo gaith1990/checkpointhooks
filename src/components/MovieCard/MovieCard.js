@@ -5,26 +5,27 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import './MovieCard.css';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import {Link} from'react-router-dom';
+
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    Width: 200,
   },
   media: {
     height: 140,
   },
 });
 
-function MovieCard({title ,description ,posteUrl, rate}) {
+function MovieCard({title ,posteUrl, rate , id}) {
   const classes = useStyles();
-
+  // className='card'
   return (
-    <Card className='card' className={classes.root}>
+    <Card  className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -35,15 +36,19 @@ function MovieCard({title ,description ,posteUrl, rate}) {
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          {/* <Typography variant="body2" color="textSecondary" component="p">
            {description}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        
+        <Link to={`/bond/${id}`} >
+        <button size="small" color="primary" className='buttonband' >
         Bande-annonce
-        </Button>
+        </button>
+        </Link>
+        
         <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend">Rate</Typography>
         <Rating name="pristine" value={rate} />

@@ -4,7 +4,9 @@ import MovieData from "./data.js";
 import MovieList from "./components/MovieList/Movielist";
 import SearchAppBar from "./components/Filter/Filter";
 import { useState } from "react";
-import Add from "./components/add/add"
+import Add from "./components/add/add";
+import {BrowserRouter,Route,Switch}  from 'react-router-dom'
+import Bond from'./components/bond/bond';
 function App() {
   const [search, setSearch] = useState("");
   const [rate, setRate] = useState("");
@@ -12,19 +14,27 @@ function App() {
   const handleMovie=(Mov) => { setNewMovie([...NewMovie,Mov])}
  
   return ( 
+    <BrowserRouter> 
     <div>
-      <div>
-        <SearchAppBar setSearch={setSearch} setRate={setRate} />
-      </div>
-      <Add handleMovie={handleMovie}  />
-      <div>
-        <MovieList item={NewMovie} search={search} rate={rate} />
-        
     
-      </div>
+    <SearchAppBar setSearch={setSearch} setRate={setRate} />
+       <Switch>
+      <Route  path='/bond/:id' component={Bond} />  
+    
+    <Route path="/">
+      <div>
+      <Add handleMovie={handleMovie}  />
+        <MovieList item={NewMovie} search={search} rate={rate} />
+        </div>
+        </Route>
+        
+        </Switch>
+      
+      
       
       
     </div>
+    </BrowserRouter>
   );
 }
 
